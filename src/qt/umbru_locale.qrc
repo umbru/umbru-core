@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/umbru_ar.qm</file>
+        <file alias="bg">locale/umbru_bg.qm</file>
+        <file alias="de">locale/umbru_de.qm</file>
+        <file alias="en">locale/umbru_en.qm</file>
+        <file alias="es">locale/umbru_es.qm</file>
+        <file alias="fi">locale/umbru_fi.qm</file>
+        <file alias="fr">locale/umbru_fr.qm</file>
+        <file alias="it">locale/umbru_it.qm</file>
+        <file alias="ja">locale/umbru_ja.qm</file>
+        <file alias="ko">locale/umbru_ko.qm</file>
+        <file alias="nl">locale/umbru_nl.qm</file>
+        <file alias="pl">locale/umbru_pl.qm</file>
+        <file alias="pt">locale/umbru_pt.qm</file>
+        <file alias="ru">locale/umbru_ru.qm</file>
+        <file alias="sk">locale/umbru_sk.qm</file>
+        <file alias="sv">locale/umbru_sv.qm</file>
+        <file alias="th">locale/umbru_th.qm</file>
+        <file alias="tr">locale/umbru_tr.qm</file>
+        <file alias="vi">locale/umbru_vi.qm</file>
+        <file alias="zh_CN">locale/umbru_zh_CN.qm</file>
+        <file alias="zh_TW">locale/umbru_zh_TW.qm</file>
+    </qresource>
+</RCC>

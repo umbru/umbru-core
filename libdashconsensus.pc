@@ -1,0 +1,11 @@
+prefix=/home/umbru/umbru-core/depends/x86_64-pc-linux-gnu
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Dash Core consensus library
+Description: Library for the Bitcoin consensus protocol.
+Version: 0.14.0
+Libs: -L${libdir} -ldashconsensus
+Cflags: -I${includedir}
+Requires.private: libcrypto

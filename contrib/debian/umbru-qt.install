@@ -1,0 +1,6 @@
+usr/local/bin/umbru-qt usr/bin
+share/pixmaps/umbru32.xpm usr/share/pixmaps
+share/pixmaps/umbru16.xpm usr/share/pixmaps
+share/pixmaps/umbru128.png usr/share/pixmaps
+debian/umbru-qt.desktop usr/share/applications
+debian/umbru-qt.protocol usr/share/kde4/services/

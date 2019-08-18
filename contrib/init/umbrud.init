@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  umbrud The Umbru Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: umbrud
+# processname: umbrud
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/umbrud, see below
+if [ -f /etc/sysconfig/umbrud ]; then
+        . /etc/sysconfig/umbrud
+fi
+
+RETVAL=0
+
+prog=umbrud
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/umbrud
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/umbrud}
+
+# umbrud defaults to /usr/bin/umbrud, override with BITCOIND_BIN
+umbrud=${BITCOIND_BIN-/usr/bin/umbrud}
+
+# umbrud opts default to -disablewallet, override with BITCOIND_OPTS
+umbrud_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $umbrud $umbrud_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
