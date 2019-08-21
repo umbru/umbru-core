@@ -272,15 +272,16 @@ public:
 
         vSporkAddresses = {"Ub727pYiLhS9CpRbbPi5eCYMEsCSpAtdis"};
         nMinSporkKeys = 1;
-        fBIP9CheckMasternodesUpgraded = false;
+        fBIP9CheckMasternodesUpgraded = true;
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (  0, uint256S("0x00000cb7859c07ebc3950ff150f5d6dc31150c5da14435fbf200d51be8f4208f"))
+            (  2000, uint256S("0x0000000000f26848b5b6edaddb29697d01c4506d1b572fb286fc501fc1096a7c"))
         };
 
         chainTxData = ChainTxData{
-            1565514000, // * UNIX timestamp of last known number of transactions (Block 1068571)
+            1565514000, // * UNIX timestamp of last known number of transactions
             1,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.1         // * estimated number of transactions per second after that timestamp
