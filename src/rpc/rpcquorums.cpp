@@ -222,14 +222,14 @@ UniValue quorum_memberof(const JSONRPCRequest& request)
         pindexTip = chainActive.Tip();
     }
 
-    auto mnList = deterministicMNManager->GetListForBlock(pindexTip);
+    auto mnList = deterministicMNManager->GetListForBlock(pindexTip->GetBlockHash());
     auto dmn = mnList.GetMN(protxHash);
     if (!dmn) {
         throw JSONRPCError(RPC_INVALID_PARAMETER, "masternode not found");
     }
 
     UniValue result(UniValue::VARR);
-
+    
     for (const auto& p : Params().GetConsensus().llmqs) {
         auto& params = p.second;
         size_t count = params.signingActiveQuorumCount;
